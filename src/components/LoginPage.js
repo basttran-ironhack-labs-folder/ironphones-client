@@ -22,14 +22,16 @@ class LoginPage extends Component {
 
     postLogIn(this.state).then(response => {
       console.log("Log In", response.data);
-      this.setState({ currentUser: response.data });
+      // use the method sent as a prop by App.js to update currentUser
+      this.props.loginSuccess(response.data);
     });
 
     // submit login info to the backend...
   }
 
   render() {
-    return this.state.currentUser ? (
+    // currentUser is now sent by App.js as a prop
+    return this.props.currentUser ? (
       <Redirect to="/recent-phones" />
     ) : (
       <section className="LoginPage">

@@ -17,6 +17,11 @@ class App extends Component {
       currentUser: null
     };
   }
+
+  updateUser(newUser) {
+    this.setState({ currentUser: newUser });
+  }
+
   render() {
     return (
       <div className="App">
@@ -44,13 +49,27 @@ class App extends Component {
           <Route
             path="/signup-page"
             render={() => {
-              return <SignupPage currentUser={this.state.currentUser} />;
+              return (
+                <SignupPage
+                  // send App's currentUser state as a prop to SignupPage
+                  currentUser={this.state.currentUser}
+                  // send App's updateUser() method as a prop to SignupPage
+                  signupSuccess={user => this.updateUser(user)}
+                />
+              );
             }}
           />
           <Route
             path="/login-page"
             rerender={() => {
-              return <LoginPage currentUser={this.state.currentUser} />;
+              return (
+                <LoginPage
+                  // send App's currentUser state as a prop to LoginPage
+                  currentUser={this.state.currentUser}
+                  // send App's updateUser() method as a prop to LoginPage
+                  loginSuccess={user => this.updateUser(user)}
+                />
+              );
             }}
           />
 
