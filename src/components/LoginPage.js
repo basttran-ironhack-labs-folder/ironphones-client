@@ -58,8 +58,8 @@ class LoginPage extends Component {
               placeholder="f1nn ru1ez"
             />
           </label>
+          <button>Log In</button>
         </form>
-        <button>Log In</button>
       </section>
     );
   }

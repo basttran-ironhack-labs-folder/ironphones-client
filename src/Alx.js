@@ -9,13 +9,11 @@ import PhoneDetails from "./components/PhoneDetails";
 import AddPhone from "./components/AddPhone";
 import LoginPage from "./components/LoginPage";
 import SignupPage from "./components/SignupPage";
-import { getLogOut } from "./api";
+import { getLogout } from "./api";
 
 class App extends Component {
   constructor(props) {
     super(props);
-
-    // TAKE THE CONSTRUCTOR FROM SOMEONE ELSE
     this.state = {
       currentUser: null
     };
@@ -33,7 +31,7 @@ class App extends Component {
   }
 
   logoutClick() {
-    getLogOut().then(response => {
+    getLogout().then(response => {
       console.log("Log Out", response.data);
       this.updateUser(null);
     });

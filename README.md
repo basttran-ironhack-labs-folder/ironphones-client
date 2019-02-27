@@ -1,3 +1,16 @@
+# Poll-n Client Side App
+
+Poll-n is a poll app where votes on a given matter can be grounded in an argument.
+
+The user should be able to create a poll or browse existing one, same for the arguments.
+
+## Project Structure
+
+For now the project is mimicking the ironphone-client's structure. For instance the api.js file is the same safe the title. Some components and the related files have been created based on provisonal wireframes.
+More components may be in order (Poll card, Argument card).
+
+# Building Tools
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
