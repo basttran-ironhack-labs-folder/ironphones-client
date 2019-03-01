@@ -39,7 +39,7 @@ class AddPhone extends Component {
   render() {
     return this.state.isSubmitSuccessful ? (
       // returning the <Redirect /> ONLY works inside RENDER
-      <Redirect to="recent-phones" />
+      <Redirect to="/recent-phones" />
     ) : (
       <section className="AddPhone">
         <h2>Add a Phone</h2>

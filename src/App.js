@@ -15,9 +15,13 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    // TAKE THE CONSTRUCTOR FROM SOMEONE ELSE
+    this.state = { currentUser: null };
+    let userInfo = localStorage.getItem("currentUser");
+    if (userInfo) {
+      userInfo = JSON.parse(userInfo);
+    }
     this.state = {
-      currentUser: null
+      currentUser: userInfo
     };
   }
 
